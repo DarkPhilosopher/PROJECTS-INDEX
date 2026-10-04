@@ -28,13 +28,16 @@ here because no record of it exists to draw from.
 | **gridplace** | `/sdcard/Download/gridplace` (Downloads, not Termux home; no git) | ASCII cursor/place/color/submit grid toy — pieces flash until submitted. |
 | **ASC** | `~/github/termux/android/ASC` — [DarkPhilosopher/ASC](https://github.com/DarkPhilosopher/ASC) | Cursor + fixed 16x16 ASCII grid, type any letter to spawn it; grew a chat/terminal log and a small variable/target/`/when`-`/calc` system. |
 | **termux-link** | `~/termux-link` (own git repo, no remote) | Bidirectional FIFO channel (`Link` class) between two independent Termux sessions, plus a `RUN_COMMAND`-based session-opener — confirmed working on-device. |
-| **overseer** | `~/bin/overseer` | One dashboard: `/help`, `/list`, `/open`, `/newsession`, `/sessions` (closes duplicate `claude` processes), reachable from a pinned Termux:API notification too. |
-| **programs** + **catalog_lib.py** | `~/bin/programs`, `~/bin/catalog_lib.py` | Auto-detecting command lister — scans `$PREFIX/bin` for any shim tagged `# CATALOG: ...` and lists/starts it; numbered, `/open <number>` works. |
-| **opensession** | `~/bin/opensession` | Plain-shell wrapper opening a brand-new, independent Termux session via the `RUN_COMMAND` intent — confirmed working on-device. |
-| **note3** | `~/bin/note3` | Generic 3-button Termux notification poster — you supply the labels and the shell command each button runs. |
-| **termux-sessions** | `~/bin/termux-sessions` | Lists/closes real Termux session tabs (not just `claude` processes) — `kill <pid>`, `kill all` (excludes the one you ran it from by default), `--include-self` to override. |
-| **memguard.sh** | `~/bin/memguard.sh` | Boot-started, runs forever: warns via notification if free RAM drops under 300MB — root-caused after 3 concurrent `claude` sessions forced this phone into heavy swap. |
-| **This index itself** | `~/github/termux/android/PROJECTS-INDEX` — new repo, being created right now | This file. |
+| **overseer** | `~/bin/overseer` — [DarkPhilosopher/termux-bin](https://github.com/DarkPhilosopher/termux-bin) | One dashboard: a numbered menu (`babymenu.py`, max 8 slots, 7 always back/exit, `a` shows everything at once) plus `/help`/`/list`/`/open`/`/newsession`/`/sessions` for muscle memory, reachable from a pinned Termux:API notification too. |
+| **programs** + **catalog_lib.py** | `~/bin/programs`, `~/bin/catalog_lib.py` — same repo | Auto-detecting command lister — scans `$PREFIX/bin` for any shim tagged `# CATALOG: ...` and lists/starts it; numbered, `/open <number>` works. |
+| **babymenu.py** | `~/bin/babymenu.py` — same repo | The shared numbered-menu pattern behind `overseer`: up to 8 options, slot 7 always back (or exit at the top level), slot 8 becomes "more..." only once options overflow past 7. |
+| **opensession** | `~/bin/opensession` — same repo | Plain-shell wrapper opening a brand-new, independent Termux session via the `RUN_COMMAND` intent — confirmed working on-device. |
+| **note3** | `~/bin/note3` — same repo | Generic 3-button Termux notification poster — you supply the labels and the shell command each button runs. |
+| **termux-sessions** | `~/bin/termux-sessions` — same repo | Lists/closes real Termux session TABS (not just `claude` processes) — by raw pid, list position number, or tty name (`pts/1`); `kill all` excludes the one you ran it from by default, `--include-self` overrides. |
+| **memguard.sh** | `~/bin/memguard.sh` — same repo | Boot-started, runs forever: warns via notification if free RAM drops under 300MB — root-caused after 3 concurrent `claude` sessions forced this phone into heavy swap. |
+| **web1** / **web2** | `$PREFIX/bin/web1`, `web2` (one-liners, not in a repo) | Quick top-level shortcuts: `web1` = `spark browser` (Spark's browser/web view), `web2` = plain `spark2`. |
+| **PROJECTS-INDEX** | `~/github/termux/android/PROJECTS-INDEX` — [DarkPhilosopher/PROJECTS-INDEX](https://github.com/DarkPhilosopher/PROJECTS-INDEX) | This file. |
+| **termux-bin** | `~/bin` — [DarkPhilosopher/termux-bin](https://github.com/DarkPhilosopher/termux-bin) | The repo several rows above actually live in, as of 2026-10-04 — previously had no git history at all. Built specifically so the same programs can be kept current across Gabe's two personal phones (an A17 and an A33): clone it, run its own `install.sh` once to wire up the bare commands, `git pull` + `install.sh` again later to catch up. |
 
 ## Found already on this device — no creation record either way
 
